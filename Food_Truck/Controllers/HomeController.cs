@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Food_Truck.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Food_Truck.Controllers
@@ -27,6 +28,18 @@ namespace Food_Truck.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult AdminDashboard()
+        {
+            return View();
+        }
+
+        [Authorize(Policy = "ITDepartmentOnly")]
+        public IActionResult ITDashboard()
+        {
+            return View();
         }
     }
 }
