@@ -1,0 +1,28 @@
+﻿@model Product
+
+<h2>Add New Product</h2>
+
+<form asp-action="AddProduct" method="post">
+    <div>
+        <label for="ProductName">Product Name</label>
+        <input asp-for="ProductName" />
+        <span asp-validation-for="ProductName"></span>
+    </div>
+    <div>
+        <label for="Category">Category</label>
+        <input asp-for="Category" />
+        <span asp-validation-for="Category"></span>
+    </div>
+    <div>
+        <label for="Price">Price</label>
+        <input asp-for="Price" />
+        <span asp-validation-for="Price"></span>
+    </div>
+   
+    <button type="submit">Add Product</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div>@ViewBag.Message</div>
+}

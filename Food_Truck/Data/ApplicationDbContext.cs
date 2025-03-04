@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Food_Truck.Models;
 
 namespace Food_Truck.Data
 {
@@ -9,5 +10,6 @@ namespace Food_Truck.Data
             : base(options)
         {
         }
+        public DbSet<Food_Truck.Models.Product> Product { get; set; } = default!;
     }
 }

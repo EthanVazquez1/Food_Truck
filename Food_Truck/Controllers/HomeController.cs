@@ -19,7 +19,7 @@ namespace Food_Truck.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Menu()
         {
             return View();
         }
